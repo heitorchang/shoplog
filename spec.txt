@@ -1,28 +1,12 @@
-Keep items in singular, lowercase, and without accents to make autocomplete easy to use.
-
-category
- - category_id
- - name
- Example: 'food', 'cleaning', 'houseware'
-
-product
- - product_id
- - category_id (fk)
- - name
- Example: 'onion'
- 
-store
- - store_id
- - name
- Example: 'mercadinho'
+Keep items in Portuguese, singular, lowercase, and without accents to make autocomplete easy to use.
 
 purchase
  - purchase_id
- - product_id (fk)
- - store_id (fk)
+ - name 
+ - notes (brand name)
+ - store
  - event_date
  - qty
  - unit ('kg', 'l', 'unit')
  - price
- - notes
- Example: onion,mercadinho,2020-11-06,0.821,kg,3.23,'sale'
+ Example: cebola,roxa,mercadinho,2020-11-06,0.821,kg,3.23,'sale'
