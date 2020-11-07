@@ -41,7 +41,9 @@ $stmt = $dbh->query("select * from shoplog order by purchase_id desc");
     ?>
         <tr>
             <td>
-                <?= $purchase['event_date'] ?>
+                <a href="purchase.php?id=<?= $purchase['purchase_id'] ?>">
+                    <?= $purchase['event_date'] ?>
+                </a>
             </td>
             <td>
                 <?= $purchase['name'] ?>
@@ -59,7 +61,7 @@ $stmt = $dbh->query("select * from shoplog order by purchase_id desc");
                 <?= $purchase['unit'] ?>
             </td>
             <td style="text-align: right;">
-                <?= $purchase['price'] ?>
+                <?= number_format($purchase['price'], 2) ?>
             </td>
             <td style="text-align: right;">
                 <?= number_format($purchase['price'] / $purchase['qty'], 2) ?>

@@ -8,7 +8,7 @@ $stmt->execute([":na" => $_POST['name'],
                 ":no" => $_POST['notes'],
                 ":st" => $_POST['store'],
                 ":ev" => $_POST['event_date'],
-                ":qt" => $_POST['qty'],
+                ":qt" => str_replace(",", ".", $_POST['qty']),
                 ":un" => $_POST['unit'],
                 ":pr" => str_replace(",", ".", $_POST['price'])
 ]);
