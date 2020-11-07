@@ -120,10 +120,6 @@ $stores = json_encode($dbh->query("select distinct store from shoplog")->fetchAl
          closeAllLists(e.target);
      });
  }function autocomplete(inp, arr) {
-     // on blur, hide autocomplete box
-     inp.addEventListener("blur", function(e) {
-         closeAllLists();
-     });
      /*the autocomplete function takes two arguments,
         the text field element and an array of possible autocompleted values:*/
      var currentFocus;
