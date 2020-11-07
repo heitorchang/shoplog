@@ -30,6 +30,9 @@ if (isset($_GET['sort'])) {
             <a href="select.php?sort=n">Produto</a>
         </td>
         <td style="text-align: right;">
+            Pr
+        </td>
+        <td style="text-align: right;">
             <a href="select.php?sort=p">Pr/un</a>
         </td>
         <td>
@@ -43,9 +46,6 @@ if (isset($_GET['sort'])) {
         </td>
         <td>
             Unidade
-        </td>
-        <td style="text-align: right;">
-            Preco
         </td>
     </tr>        
 
@@ -63,6 +63,9 @@ if (isset($_GET['sort'])) {
                 <?= $purchase['name'] ?>
             </td>
             <td style="text-align: right;">
+                <?= number_format($purchase['price'], 2) ?>
+            </td>
+            <td style="text-align: right;">
                 <?= number_format($purchase['price'] / $purchase['qty'], 2) ?>
             </td>            
             <td>
@@ -76,9 +79,6 @@ if (isset($_GET['sort'])) {
             </td>
             <td>
                 <?= $purchase['unit'] ?>
-            </td>
-            <td style="text-align: right;">
-                <?= number_format($purchase['price'], 2) ?>
             </td>
         </tr>        
     <?php
