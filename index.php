@@ -9,35 +9,29 @@ session_start();
 <form action="insert_add.php" method="post" autocomplete="off">
     <table>
         <tr>
-            <td>Data</td>
             <td><input type="date" name="event_date" autocomplete="off" id="datepicker"></td>
         </tr>
         <tr>
-            <td>Produto</td>           
             <td>
                 <div class="autocomplete" style="width: 300px;">
-                    <input type="text" id="nameAC" name="name" autofocus>
+                    <input type="text" id="nameAC" name="name" placeholder="produto" autofocus>
                 </div>
             </td>
         </tr>
         <tr>
-            <td>Anotacoes</td>
-            <td><input type="text" name="notes" autocomplete="off"></td>
+            <td><input type="text" name="notes" placeholder="anotacoes" autocomplete="off"></td>
         </tr>
         <tr>
-            <td>Loja</td>
             <td>
                 <div class="autocomplete" style="width: 300px;">
-                    <input type="text" id="storeAC" name="store">
+                    <input type="text" id="storeAC" placeholder="loja" name="store">
                 </div>
             </td>
         </tr>
         <tr>
-            <td>Qtde</td>
-            <td><input type="text" name="qty" autocomplete="off"></td>
+            <td><input type="text" name="qty" placeholder="qtde" autocomplete="off"></td>
         </tr>
         <tr>
-            <td>Unidade</td>
             <td>
                 <select name="unit">
                     <option value="un" selected>un</option>
@@ -47,8 +41,7 @@ session_start();
             </td>
         </tr>
         <tr>
-            <td>Preco</td>
-            <td><input type="text" name="price" autocomplete="off"></td>
+            <td><input type="text" name="price" placeholder="preco" autocomplete="off"></td>
         </tr>
     </table>
     <input type="submit">
