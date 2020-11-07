@@ -61,6 +61,10 @@ $row = $stmt->fetch();
     <input type="submit">
 </form>
 
+<br><br><br>
+
+<a href="delete_confirm.php?id=<?= $row['purchase_id'] ?>" style="margin-left: 20em;">Delete</a>
+
 <script>
  // select correct unit
  var sel = document.getElementById('unitSelect');

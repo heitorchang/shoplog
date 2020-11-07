@@ -58,9 +58,14 @@
          table td {
              padding: 0.5em 0.4em;
          }
+         body {
+             margin: 2em;
+         }
+         a {
+             font-size: 1.4em;
+         }
         </style>
     </head>
     <body>
-        <a href="index.php">Home</a>
+        <a href="index.php">New</a>
         | <a href="select.php">Select</a>
-        | <a href="insert.php">Insert</a>
