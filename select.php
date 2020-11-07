@@ -5,22 +5,35 @@ include("header.php");
 
 session_start();
 
-$stmt = $dbh->query("select * from shoplog order by purchase_id desc");
-       ?>
+if (isset($_GET['sort'])) {
+    if ($_GET['sort'] == "n") {
+        $stmt = $dbh->query("select * from shoplog order by name, store");
+    } elseif ($_GET['sort'] == "l") {
+        $stmt = $dbh->query("select * from shoplog order by store, name");
+    } elseif ($_GET['sort'] == "p") {
+        $stmt = $dbh->query("select * from shoplog order by price / qty desc");
+    } else {
+        $stmt = $dbh->query("select * from shoplog order by event_date desc, name");
+    }
+} else {
+    $stmt = $dbh->query("select * from shoplog order by event_date desc, name");
+}
+?>
 
+<br><br>
 <table>
     <tr>
         <td>
-            Data
+            <a href="select.php">Data</a>
         </td>
         <td>
-            Produto
+            <a href="select.php?sort=n">Produto</a>
         </td>
         <td>
             Anot.
         </td>
         <td>
-            Loja
+            <a href="select.php?sort=l">Loja</a>
         </td>
         <td style="text-align: right;">
             Qtde
@@ -32,7 +45,7 @@ $stmt = $dbh->query("select * from shoplog order by purchase_id desc");
             Preco
         </td>
         <td style="text-align: right;">
-            Preco por unid
+            <a href="select.php?sort=p">Preco/un</a>
         </td>
     </tr>        
 

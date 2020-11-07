@@ -1,2 +1,1 @@
-[  ] view that sorts by product name
 [  ] filter by product, date. build the query. use GET

@@ -68,4 +68,5 @@
     </head>
     <body>
         <a href="index.php">New</a>
-        | <a href="select.php">Select</a>
+        &bullet;
+        <a href="select.php">List</a>
