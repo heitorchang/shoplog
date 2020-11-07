@@ -17,7 +17,7 @@ $stmt = $dbh->query("select * from shoplog order by purchase_id desc");
             Produto
         </td>
         <td>
-            Anotacoes
+            Anot.
         </td>
         <td>
             Loja
@@ -38,11 +38,12 @@ $stmt = $dbh->query("select * from shoplog order by purchase_id desc");
 
     <?php
     foreach ($stmt as $purchase) {
+        $dt = $purchase['event_date'];
     ?>
         <tr>
             <td>
                 <a href="purchase.php?id=<?= $purchase['purchase_id'] ?>">
-                    <?= $purchase['event_date'] ?>
+                    <?= substr($dt, 8, 2) . '/' . substr($dt, 5, 2) ?>
                 </a>
             </td>
             <td>
