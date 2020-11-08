@@ -8,7 +8,7 @@ session_start();
 ?>
 
 <p>
-    Search
+    Search (default: last 45 days)
 </p>
 
 <form action="filter_select.php" method="get" autocomplete="off">

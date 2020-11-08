@@ -19,10 +19,14 @@ if ($_GET['name'] !== "") {
     $strippedName = stripAll($_GET['name']);
     $cond[] = "name like '${strippedName}%'";
 }
+
 if ($_GET['start_date'] !== "") {
     $strippedStartDate = stripAll($_GET['start_date']);
     $cond[] = "event_date >= '${strippedStartDate}'";
+} else {
+    $cond[] = "event_date >= now() - interval 45 day ";
 }
+
 if ($_GET['end_date'] !== "") {
     $strippedEndDate = stripAll($_GET['end_date']);
     $cond[] = "event_date <= '${strippedEndDate}'";
@@ -111,5 +115,5 @@ $stmt = $dbh->query($sql);
     ?>
     
 </table>
-    
+
 

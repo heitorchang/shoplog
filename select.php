@@ -7,20 +7,21 @@ session_start();
 
 if (isset($_GET['sort'])) {
     if ($_GET['sort'] == "n") {
-        $stmt = $dbh->query("select * from shoplog order by name, store");
+        $stmt = $dbh->query("select * from shoplog where event_date >= now() - interval 45 day order by name, store");
     } elseif ($_GET['sort'] == "l") {
-        $stmt = $dbh->query("select * from shoplog order by store, name");
+        $stmt = $dbh->query("select * from shoplog where event_date >= now() - interval 45 day order by store, name");
     } elseif ($_GET['sort'] == "p") {
-        $stmt = $dbh->query("select * from shoplog order by price / qty desc");
+        $stmt = $dbh->query("select * from shoplog where event_date >= now() - interval 45 day order by price / qty desc");
     } else {
-        $stmt = $dbh->query("select * from shoplog order by event_date desc, name");
+        $stmt = $dbh->query("select * from shoplog where event_date >= now() - interval 45 day order by event_date desc, name");
     }
 } else {
-    $stmt = $dbh->query("select * from shoplog order by event_date desc, name");
+    $stmt = $dbh->query("select * from shoplog where event_date >= now() - interval 45 day order by event_date desc, name");
 }
 ?>
-
-<br><br>
+<p>
+    Purchases in the last 45 days
+</p>
 <table>
     <tr>
         <td>
