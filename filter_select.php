@@ -41,6 +41,8 @@ if ($_GET['sort'] == "n") {
     $sql .= "order by name, store";
 } elseif ($_GET['sort'] == "p") {
     $sql .= "order by price / qty desc";
+} elseif ($_GET['sort'] == "pr") {
+    $sql .= "order by price desc";
 } elseif ($_GET['sort'] == "d") {
     $sql .= "order by event_date desc, name";
 }

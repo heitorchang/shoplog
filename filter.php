@@ -31,6 +31,7 @@ session_start();
                 Sort by
                 <select name="sort">
                     <option value="p" selected>price/qty</option>
+                    <option value="pr">price</option>
                     <option value="n">name</option>
                     <option value="d">date</option>
                 </select>

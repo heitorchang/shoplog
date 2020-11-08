@@ -10,6 +10,8 @@ if (isset($_GET['sort'])) {
         $stmt = $dbh->query("select * from shoplog where event_date >= now() - interval 45 day order by name, store");
     } elseif ($_GET['sort'] == "l") {
         $stmt = $dbh->query("select * from shoplog where event_date >= now() - interval 45 day order by store, name");
+    } elseif ($_GET['sort'] == "pr") {
+        $stmt = $dbh->query("select * from shoplog where event_date >= now() - interval 45 day order by price desc");
     } elseif ($_GET['sort'] == "p") {
         $stmt = $dbh->query("select * from shoplog where event_date >= now() - interval 45 day order by price / qty desc");
     } else {
@@ -31,7 +33,7 @@ if (isset($_GET['sort'])) {
             <a href="select.php?sort=n">Produto</a>
         </td>
         <td style="text-align: right;">
-            Pr
+            <a href="select.php?sort=pr">Pr</a>
         </td>
         <td style="text-align: right;">
             <a href="select.php?sort=p">Pr/un</a>
