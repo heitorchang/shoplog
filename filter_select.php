@@ -47,6 +47,8 @@ if ($_GET['sort'] == "n") {
 
 $stmt = $dbh->query($sql);
 
+$grandTotal = 0;
+
 ?>
 
 <br><br>
@@ -79,7 +81,23 @@ $stmt = $dbh->query($sql);
     </tr>        
 
     <?php
+    $rawRows = [];
+    
     foreach ($stmt as $purchase) {
+        $rawRows[] = $purchase;
+    }
+
+    foreach ($rawRows as $purchase) {
+        $grandTotal += $purchase['price'];
+    }
+    ?>
+    
+    <p>
+        <strong>Grand total:</strong> <?= number_format($grandTotal, 2) ?>
+    </p>
+
+    <?php
+    foreach ($rawRows as $purchase) {
         $dt = $purchase['event_date'];
     ?>
         <tr>
@@ -113,7 +131,8 @@ $stmt = $dbh->query($sql);
     <?php
     }
     ?>
-    
 </table>
+
+
 
 
