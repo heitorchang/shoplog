@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
-        <title>My Title</title>
+        <title>Shoplog - Crystal</title>
         <style>
          * { box-sizing: border-box; }
          body {
@@ -70,3 +70,5 @@
         <a href="index.php">New</a>
         &bullet;
         <a href="select.php">List</a>
+        &bullet;
+        <a href="filter.php">Search</a>

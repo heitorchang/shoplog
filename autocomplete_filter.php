@@ -1,26 +1,15 @@
 <?php
 $names = json_encode($dbh->query("select distinct name from shoplog")->fetchAll());
-$stores = json_encode($dbh->query("select distinct store from shoplog")->fetchAll());
 ?>
 
 <script>
- // document.getElementById("datepicker").valueAsDate = new Date();
-
  var namesJSON = <?= $names ?>;
- var storesJSON = <?= $stores ?>;
 
  var names = [];
- var stores = [];
 
  for (const n of namesJSON) {
      if (n['name'] !== undefined && n['name'].trim().length > 0) {
          names.push(n['name']);
-     }
- }
- 
- for (const s of storesJSON) {
-     if (s['store'] !== undefined && s['store'].trim().length > 0) {
-         stores.push(s['store']);
      }
  }
  
@@ -217,6 +206,5 @@ $stores = json_encode($dbh->query("select distinct store from shoplog")->fetchAl
  }
 
  autocomplete(document.getElementById('nameAC'), names);
- autocomplete(document.getElementById('storeAC'), stores);
 
 </script>

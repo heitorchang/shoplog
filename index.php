@@ -87,4 +87,8 @@ foreach ($stmt as $purchase) {
 
 include("autocomplete.php");
 
+?>
 
+<script>
+    document.getElementById("datepicker").valueAsDate = new Date();
+</script>
