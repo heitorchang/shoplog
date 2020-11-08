@@ -56,13 +56,13 @@
              color: #ffffff;
          }
          table td {
-             padding: 0.5em 0.4em;
+             padding: 0.3em 0.4em;
          }
          body {
-             margin: 2em;
+             margin: 0.5em;
          }
          a {
-             font-size: 1.4em;
+             font-size: 1.1em;
          }
         </style>
     </head>
