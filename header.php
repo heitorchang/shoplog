@@ -55,8 +55,15 @@
              background-color: DodgerBlue !important;
              color: #ffffff;
          }
+         table {
+             border-collapse: collapse;
+         }
+         
          table td {
              padding: 0.3em 0.4em;
+         }
+         tr:nth-child(even) {
+             background-color: #ff9;
          }
          body {
              margin: 0.5em;
