@@ -62,7 +62,7 @@
          table td {
              padding: 0.3em 0.4em;
          }
-         tr:nth-child(even) {
+         tr:nth-child(even).tlist {
              background-color: #ff9;
          }
          body {

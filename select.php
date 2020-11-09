@@ -56,7 +56,7 @@ if (isset($_GET['sort'])) {
     foreach ($stmt as $purchase) {
         $dt = $purchase['event_date'];
     ?>
-        <tr>
+        <tr class="tlist">
             <td>
                 <a href="purchase.php?id=<?= $purchase['purchase_id'] ?>">
                     <?= substr($dt, 8, 2) . '/' . substr($dt, 5, 2) ?>
