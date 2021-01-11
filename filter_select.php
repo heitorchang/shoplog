@@ -24,7 +24,7 @@ if ($_GET['start_date'] !== "") {
     $strippedStartDate = stripAll($_GET['start_date']);
     $cond[] = "event_date >= '${strippedStartDate}'";
 } else {
-    $cond[] = "event_date >= now() - interval 45 day ";
+    $cond[] = "event_date >= '2020-01-01'";
 }
 
 if ($_GET['end_date'] !== "") {
