@@ -80,11 +80,11 @@ $grandTotal = 0;
         <td>
             Loja
         </td>
-    </tr>        
+    </tr>
 
     <?php
     $rawRows = [];
-    
+
     foreach ($stmt as $purchase) {
         $rawRows[] = $purchase;
     }
@@ -93,7 +93,7 @@ $grandTotal = 0;
         $grandTotal += $purchase['price'];
     }
     ?>
-    
+
     <p>
         <strong>Grand total:</strong> <?= number_format($grandTotal, 2) ?>
     </p>
@@ -105,7 +105,7 @@ $grandTotal = 0;
         <tr class="tlist">
             <td>
                 <a href="purchase.php?id=<?= $purchase['purchase_id'] ?>">
-                    <?= substr($dt, 8, 2) . '/' . substr($dt, 5, 2) ?>
+                    <?= substr($dt, 8, 2) . '/' . substr($dt, 5, 2) . '/' . substr($dt, 0, 4) ?>
                 </a>
             </td>
             <td>
@@ -116,7 +116,7 @@ $grandTotal = 0;
             </td>
             <td style="text-align: right;">
                 <?= number_format($purchase['price'] / $purchase['qty'], 2) ?>
-            </td>            
+            </td>
             <td style="text-align: right;">
                 <?= $purchase['qty'] ?>
             </td>
@@ -129,12 +129,8 @@ $grandTotal = 0;
             <td>
                 <?= $purchase['store'] ?>
             </td>
-        </tr>        
+        </tr>
     <?php
     }
     ?>
 </table>
-
-
-
-

@@ -50,7 +50,7 @@ if (isset($_GET['sort'])) {
         <td>
             <a href="select.php?sort=l">Loja</a>
         </td>
-    </tr>        
+    </tr>
 
     <?php
     foreach ($stmt as $purchase) {
@@ -59,7 +59,7 @@ if (isset($_GET['sort'])) {
         <tr class="tlist">
             <td>
                 <a href="purchase.php?id=<?= $purchase['purchase_id'] ?>">
-                    <?= substr($dt, 8, 2) . '/' . substr($dt, 5, 2) ?>
+                    <?= substr($dt, 8, 2) . '/' . substr($dt, 5, 2) . '/' . substr($dt, 0, 4) ?>
                 </a>
             </td>
             <td>
@@ -70,7 +70,7 @@ if (isset($_GET['sort'])) {
             </td>
             <td style="text-align: right;">
                 <?= number_format($purchase['price'] / $purchase['qty'], 2) ?>
-            </td>            
+            </td>
             <td style="text-align: right;">
                 <?= $purchase['qty'] ?>
             </td>
@@ -83,11 +83,9 @@ if (isset($_GET['sort'])) {
             <td>
                 <?= $purchase['store'] ?>
             </td>
-        </tr>        
+        </tr>
     <?php
     }
     ?>
-    
-</table>
-    
 
+</table>
